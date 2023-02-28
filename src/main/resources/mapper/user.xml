@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="shop.mtcoding.examtest.user.model.UserRepository">
+
+    <select id="findAll" resultType="shop.mtcoding.examtest.user.model.User">
+        select * from user_tb
+    </select>
+
+    <select id="findById" resultType="shop.mtcoding.examtest.user.model.User">
+        select * from user_tb where id = #{id}
+    </select>
+
+    <insert id="insert">
+        insert into user_tb (username, password, email, created_at) 
+        values(#{username}, #{password}, #{email}, now())
+    </insert>
+
+    <delete id="deleteById">
+        delete from user_tb where id = #{id} 
+    </delete>    
+
+    <update id="updateById">
+        update user_tb 
+           set password = #{password}, 
+               email = #{email}, 
+               address = #{address},
+               detail_address = #{detailAddress},
+               tel = #{tel},
+               career = #{career}
+        where id = #{id} 
+    </update>
+
+    <insert id="insertForEmployee" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        insert into user_tb (username, password, email, created_at) 
+        values(#{username}, #{password}, #{email}, now())
+    </insert>
+
+    <insert id="insertForCompany" useGeneratedKeys="true" keyColumn="id" keyProperty="id">
+        insert into user_tb (username, password, email, address, detail_address, created_at) 
+        values(#{username}, #{password}, #{email}, #{address}, #{detailAddress}, now())
+    </insert>
+
+    <select id="findByUsername" resultType="shop.mtcoding.examtest.user.model.User">
+        select * from user_tb where username = #{username}
+    </select>
+
+    <select id="findByUsernameAndPassword" resultType="shop.mtcoding.examtest.user.vo.UserVo">
+        select * from user_tb where username = #{username} and password = #{password}
+    </select>
+</mapper>

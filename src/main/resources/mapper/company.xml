@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="shop.mtcoding.examtest.company.model.CompanyRepository">
+
+    <select id="findAll" resultType="shop.mtcoding.examtest.company.model.Company">
+        select * from company_tb
+    </select>
+
+    <select id="findByUserId" resultType="shop.mtcoding.examtest.company.model.Company">
+        select * from company_tb where user_id = #{userId}
+    </select>
+
+    <insert id="insert">
+        insert into company_tb (user_id, company_name, company_numb) 
+        values(#{userId}, #{companyName}, #{companyNumb})
+    </insert>    
+
+    <update id="updateByUserId">
+        update company_tb
+           set company_name = #{companyName}, 
+               company_scale = #{companyScale}, 
+               company_field = #{companyField},
+        where user_id = #{userId}
+    </update>    
+
+    <delete id="deleteByUserId">
+        delete from company_tb where user_id = #{userId} 
+    </delete>    
+</mapper>

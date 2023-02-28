@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="shop.mtcoding.examtest.employee.model.EmployeeRepository">
+
+    <select id="findAll" resultType="shop.mtcoding.examtest.employee.model.Employee">
+        select * from employee_tb
+    </select>
+
+    <select id="findByUserId" resultType="shop.mtcoding.examtest.employee.model.Employee">
+        select * from employee_tb where user_id = #{userId}
+    </select>
+
+    <insert id="insert">
+        insert into employee_tb (user_id) values(#{userId})
+    </insert>    
+
+    <delete id="deleteByUserId">
+        delete from employee_tb where user_id = #{userId} 
+    </delete>    
+
+    <update id="updateByUserId">
+        update employee_tb 
+           set real_name = #{readName}, 
+               career = #{career},
+               education = #{education}
+        where user_id = #{userId} 
+    </update>
+
+</mapper>

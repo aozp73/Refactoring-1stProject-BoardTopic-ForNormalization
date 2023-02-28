@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="shop.mtcoding.examtest.board.model.BoardTechRepository">
+
+    <select id="findAll" resultType="shop.mtcoding.examtest.board.model.BoardTech">
+        select * from boardtech_tb
+    </select>
+
+    <select id="findByBoardId" resultType="shop.mtcoding.examtest.board.model.BoardTech">
+        select * from boardtech_tb where board_id = #{boardId}
+    </select>
+
+    <insert id="insert">
+        insert into boardtech_tb (board_id, skill) values(#{boardId}, #{skill})
+    </insert>    
+
+    <delete id="deleteByBoardId">
+        delete from boardtech_tb where board_id = #{boardId} 
+    </delete>    
+
+    <update id="updateByBoardId">
+        update boardtech_tb 
+           set skill = #{skill}
+        where board_id = #{boardId} 
+    </update>
+
+</mapper>
