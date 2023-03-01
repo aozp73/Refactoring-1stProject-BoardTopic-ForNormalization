@@ -1,0 +1,60 @@
+.my-bg-color-default {
+    background-color: rgba(52, 152, 219, 1);
+}
+
+.my-border-color-default {
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: rgba(52, 152, 219, 1);
+}
+
+.my-button-no-round {
+    border-radius: 0;
+}
+
+.my-button-color-default {
+    background-color: rgba(52, 152, 219, 1);
+    border-color: rgba(52, 152, 219, 1);
+}
+
+.my-nav-bar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.my-boardDetail-header {
+    display: grid;
+    grid-template-columns: 8fr 2fr;
+}
+
+.my-boardDetail-header-sector1-grid {
+    display: grid;
+    grid-template-columns: 1.9fr 6fr;
+}
+
+.my-borderDetail-color-left {
+    border-left: 1px solid;
+    border-color: rgba(52, 152, 219, 1);
+}
+
+.my-borderDetail-color-top {
+    border-top: 1px solid;
+    border-color: rgba(52, 152, 219, 1);
+}
+
+.no_under_line_link {
+    text-decoration: none;
+    color: black;
+}
+
+.my-text-ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.my-thumbnail-color-default {
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: #CED4DA;
+}
